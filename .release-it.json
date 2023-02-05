@@ -49,8 +49,8 @@
           "files": [
             "setup.cfg"
           ],
-          "search": "v\\d+\\.\\d+\\.\\d+",
-          "replace": "v{{version}}"
+          "search": "\\d+\\.\\d+\\.\\d+",
+          "replace": "{{version}}"
         }
       ]
     }
