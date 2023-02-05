@@ -1,0 +1,3 @@
+data_collector_base_directory: "collected-info"
+collect_data_function: "ocp_utilities.data_collector.collect_data"
+collect_pod_logs: true

@@ -1,0 +1,20 @@
+[flake8]
+exclude =
+    doc,
+    .tox,
+    .git,
+    .yml,
+    Pipfile.*,
+    docs/*,
+    .cache/*
+
+enable-extensions =
+    FCN,
+
+fcn_exclude_functions =
+    LOGGER,
+    os,
+    fd,
+    logging,
+    subprocess,
+    yaml,
