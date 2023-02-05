@@ -50,7 +50,7 @@
             "setup.cfg"
           ],
           "search": "\\d+\\.\\d+\\.\\d+.tar.gz",
-          "replace": "{{version}}"
+          "replace": "{{version}}.tar.gz"
         }
       ]
     }
