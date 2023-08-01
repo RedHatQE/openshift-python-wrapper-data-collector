@@ -1,0 +1,60 @@
+[tool.black]
+line-length = 88
+target_version = ['py37', 'py38', 'py39', 'py310', "py311"]
+exclude = '''
+(
+  /(
+    | \.git
+    | \.venv
+    | \.mypy_cache
+    | \.tox
+  )/
+)
+'''
+
+[tool.isort]
+line_length = 88
+profile = "black"
+
+[tool.poetry]
+name = "openshift-python-wrapper-data-collector"
+version = "1.0.4"
+description = "Data collector for https://github.com/openshift/openshift-python-wrapper when running with PyTest"
+authors = ["Meni Yakove <myakove@gmail.com>", "Ruth Netser <rnetser@gmail.com>"]
+readme = "README.md"
+license = "Apache-2.0"
+homepage = "https://github.com/RedHatQE/openshift-python-wrapper-data-collector"
+documentation = "https://github.com/RedHatQE/openshift-python-wrapper-data-collector/blob/main/README.md"
+keywords = ["Openshift", "OCP"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[tool.poetry.urls]
+Download = "https://github.com/RedHatQE/openshift-python-wrapper-data-collector/archive/refs/tags/1.0.4.tar.gz"
+"Bug Tracker" = "https://github.com/RedHatQE/openshift-python-wrapper-data-collector/issues"
+
+
+[tool.poetry.group.dev.dependencies]
+ipdb = "^0.13.13"
+
+[tool.poetry.group.tests.dependencies]
+pytest = "^7.4.0"
+pytest-testconfig = "^0.2.0"
+
+[tool.poetry-dynamic-versioning.substitution]
+files = ["VERSION"]
+
+[tool.poetry-dynamic-versioning]
+enable = true
+pattern = "((?P<epoch>\\d+)!)?(?P<base>\\d+(\\.\\d+)*)"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyyaml = "^6.0.1"
+openshift-python-wrapper = "^4.14.21"
