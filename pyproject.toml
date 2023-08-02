@@ -18,7 +18,7 @@ profile = "black"
 
 [tool.poetry]
 name = "openshift-python-wrapper-data-collector"
-version = "1.0.4"
+version = "0.0.0"
 description = "Data collector for https://github.com/openshift/openshift-python-wrapper when running with PyTest"
 authors = ["Meni Yakove <myakove@gmail.com>", "Ruth Netser <rnetser@gmail.com>"]
 readme = "README.md"
@@ -38,6 +38,7 @@ Download = "https://github.com/RedHatQE/openshift-python-wrapper-data-collector/
 
 [tool.poetry.group.dev.dependencies]
 ipdb = "^0.13.13"
+ipython = "*"
 
 [tool.poetry.group.tests.dependencies]
 pytest = "^7.4.0"
