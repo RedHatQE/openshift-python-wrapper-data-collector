@@ -21,6 +21,7 @@ name = "openshift-python-wrapper-data-collector"
 version = "0.0.0"
 description = "Data collector for https://github.com/openshift/openshift-python-wrapper when running with PyTest"
 authors = ["Meni Yakove <myakove@gmail.com>", "Ruth Netser <rnetser@gmail.com>"]
+packages = [{include = "ocp_wrapper_data_collector"}]
 readme = "README.md"
 license = "Apache-2.0"
 homepage = "https://github.com/RedHatQE/openshift-python-wrapper-data-collector"
