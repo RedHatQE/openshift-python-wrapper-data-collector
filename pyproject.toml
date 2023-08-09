@@ -27,6 +27,7 @@ license = "Apache-2.0"
 homepage = "https://github.com/RedHatQE/openshift-python-wrapper-data-collector"
 documentation = "https://github.com/RedHatQE/openshift-python-wrapper-data-collector/blob/main/README.md"
 keywords = ["Openshift", "OCP"]
+packages = [{include = "ocp_wrapper_data_collector"}]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
