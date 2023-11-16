@@ -68,7 +68,7 @@ def collect_data(directory, resource_object, collect_pod_logs=True):
         resource_object (cluster resource): Cluster resource
         collect_pod_logs (bool, default=True): collect pods logs if True else do not collect logs
     """
-    LOGGER.info("Collecting instance data for" f" {resource_object.kind} {resource_object.name} under {directory}")
+    LOGGER.info(f"Collecting instance data for {resource_object.kind} {resource_object.name} under {directory}")
 
     if resource_object.kind == Pod.kind:
         collect_pods_data(
@@ -172,7 +172,7 @@ def collect_resources_yaml_instance(resources_to_collect, base_directory, namesp
                         extra_dir_name=resource_obj.kind,
                     )
                 except Exception as exp:
-                    LOGGER.warning("Failed to collect resource:" f" {resource_obj.kind} {resource_obj.name} {exp}")
+                    LOGGER.warning(f"Failed to collect resource: {resource_obj.kind} {resource_obj.name} {exp}")
         except Exception as exp:
             LOGGER.warning(f"Failed to collect resources for type: {_resources} {exp}")
 
