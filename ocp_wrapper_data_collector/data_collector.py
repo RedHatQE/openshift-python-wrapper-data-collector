@@ -34,9 +34,7 @@ def collect_vmi_data(vmi, directory, collect_pod_logs=True):
     )
 
 
-def collect_data_volume_data(
-    dyn_client, directory, collect_pod_logs=True, cdi_pod_prefixes=None
-):
+def collect_data_volume_data(dyn_client, directory, collect_pod_logs=True, cdi_pod_prefixes=None):
     """
     Collect DataVolume-related pods (importer/cdi-upload/source-pod) yamls and logs
 
@@ -70,10 +68,7 @@ def collect_data(directory, resource_object, collect_pod_logs=True):
         resource_object (cluster resource): Cluster resource
         collect_pod_logs (bool, default=True): collect pods logs if True else do not collect logs
     """
-    LOGGER.info(
-        "Collecting instance data for"
-        f" {resource_object.kind} {resource_object.name} under {directory}"
-    )
+    LOGGER.info("Collecting instance data for" f" {resource_object.kind} {resource_object.name} under {directory}")
 
     if resource_object.kind == Pod.kind:
         collect_pods_data(
@@ -138,9 +133,7 @@ def prepare_pytest_item_data_dir(item, base_directory, subdirectory_name):
     tests_path = item.session.config.inicfg.get("testpaths")
     assert tests_path, "pytest.ini must include testpaths"
 
-    fspath_split_str = (
-        "/" if tests_path != os.path.split(item.fspath.dirname)[1] else ""
-    )
+    fspath_split_str = "/" if tests_path != os.path.split(item.fspath.dirname)[1] else ""
     item_dir_log = os.path.join(
         base_directory,
         item.fspath.dirname.split(f"/{tests_path}{fspath_split_str}")[-1],
@@ -153,9 +146,7 @@ def prepare_pytest_item_data_dir(item, base_directory, subdirectory_name):
     return item_dir_log
 
 
-def collect_resources_yaml_instance(
-    resources_to_collect, base_directory, namespace_name=None
-):
+def collect_resources_yaml_instance(resources_to_collect, base_directory, namespace_name=None):
     """
     Collect resources instances yamls.
 
@@ -181,10 +172,7 @@ def collect_resources_yaml_instance(
                         extra_dir_name=resource_obj.kind,
                     )
                 except Exception as exp:
-                    LOGGER.warning(
-                        "Failed to collect resource:"
-                        f" {resource_obj.kind} {resource_obj.name} {exp}"
-                    )
+                    LOGGER.warning("Failed to collect resource:" f" {resource_obj.kind} {resource_obj.name} {exp}")
         except Exception as exp:
             LOGGER.warning(f"Failed to collect resources for type: {_resources} {exp}")
 
@@ -248,9 +236,7 @@ def write_container_logs_to_files(pod, base_directory):
         base_directory (str): output directory
     """
     try:
-        containers_list = [
-            container["name"] for container in pod.instance.status.containerStatuses
-        ]
+        containers_list = [container["name"] for container in pod.instance.status.containerStatuses]
     except Exception as exp:
         LOGGER.warning(f"Failed to get pod {pod.name} containers: {exp}")
         return
@@ -264,9 +250,7 @@ def write_container_logs_to_files(pod, base_directory):
                 extra_dir_name="containers",
             )
         except Exception as exp:
-            LOGGER.warning(
-                f"Failed to collect pod {pod.name} container {container} logs: {exp}"
-            )
+            LOGGER.warning(f"Failed to collect pod {pod.name} container {container} logs: {exp}")
 
 
 def get_data_collector_base_dir(data_collector_dict):
@@ -291,14 +275,10 @@ def get_data_collector_base_dir(data_collector_dict):
         "collector_directory",
         data_collector_dict["data_collector_base_directory"],
     )
-    data_collect_dynamic_dir = os.environ.get(
-        "OPENSHIFT_PYTHON_WRAPPER_DATA_COLLECTOR_DYNAMIC_BASE_DIR"
-    )
+    data_collect_dynamic_dir = os.environ.get("OPENSHIFT_PYTHON_WRAPPER_DATA_COLLECTOR_DYNAMIC_BASE_DIR")
     if data_collect_dynamic_dir:
         path_head, path_tail = os.path.split(data_collector_directory.rstrip("/"))
-        data_collector_directory = os.path.join(
-            path_head, data_collect_dynamic_dir, path_tail
-        )
+        data_collector_directory = os.path.join(path_head, data_collect_dynamic_dir, path_tail)
 
     return data_collector_directory
 
@@ -310,9 +290,7 @@ def get_data_collector_dict():
     Returns:
         dict: data collector configuration
     """
-    data_collect_env_var_yaml = os.environ.get(
-        "OPENSHIFT_PYTHON_WRAPPER_DATA_COLLECTOR_YAML"
-    )
+    data_collect_env_var_yaml = os.environ.get("OPENSHIFT_PYTHON_WRAPPER_DATA_COLLECTOR_YAML")
     if data_collect_env_var_yaml:
         try:
             with open(data_collect_env_var_yaml, "r") as fd:
