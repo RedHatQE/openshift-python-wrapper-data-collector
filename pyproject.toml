@@ -50,4 +50,4 @@ build-backend = "poetry_dynamic_versioning.backend"
 [tool.poetry.dependencies]
 python = "^3.8"
 pyyaml = "^6.0.1"
-openshift-python-wrapper = "^4.15.13"
+openshift-python-wrapper = "^10.0.0"
