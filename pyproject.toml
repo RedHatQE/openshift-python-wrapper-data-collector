@@ -32,9 +32,6 @@ Download = "https://github.com/RedHatQE/openshift-python-wrapper-data-collector/
 ipdb = "^0.13.13"
 ipython = "*"
 
-[tool.poetry.group.tests.dependencies]
-pytest = "^8.0.0"
-pytest-testconfig = "^0.2.0"
 
 [tool.poetry-dynamic-versioning.substitution]
 files = ["VERSION"]
@@ -51,3 +48,5 @@ build-backend = "poetry_dynamic_versioning.backend"
 python = "^3.8"
 pyyaml = "^6.0.1"
 openshift-python-wrapper = ">=10.0.0"
+pytest = "^8.0.0"
+pytest-testconfig = "^0.2.0"
