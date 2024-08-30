@@ -722,12 +722,12 @@ signedtoken = ["cryptography (>=3.0.0)", "pyjwt (>=2.0.0,<3)"]
 
 [[package]]
 name = "openshift-python-wrapper"
-version = "10.0.79"
+version = "10.0.80"
 description = "Wrapper around https://github.com/kubernetes-client/python"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "openshift_python_wrapper-10.0.79.tar.gz", hash = "sha256:1b20e723b8a60a3807494a36069bf2c46c2973b846aee57c68c33746f07f7f55"},
+    {file = "openshift_python_wrapper-10.0.80.tar.gz", hash = "sha256:3efb684e77d490e41f1e742ae348ec1f2a8117dc7318406d8678df7210140f44"},
 ]
 
 [package.dependencies]
@@ -737,7 +737,7 @@ colorlog = ">=6.7.0,<7.0.0"
 jinja2 = ">=3.1.2,<4.0.0"
 kubernetes = ">=30.0.0,<31.0.0"
 packaging = ">=23.1,<24.0"
-pyhelper-utils = ">=0.0.37,<0.0.38"
+pyhelper-utils = ">=0.0.38,<0.0.39"
 pytest = ">=8.0.0,<9.0.0"
 python-benedict = ">=0.33.0,<0.34.0"
 python-simple-logger = ">=1.0.6"
@@ -935,12 +935,12 @@ windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
 name = "pyhelper-utils"
-version = "0.0.37"
+version = "0.0.38"
 description = "Collective utility functions for python projects"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "pyhelper_utils-0.0.37.tar.gz", hash = "sha256:b5585dbcf7ab779435b218ce2b14c02e69d6d4256bc53adac8297120a550c0b5"},
+    {file = "pyhelper_utils-0.0.38.tar.gz", hash = "sha256:43f4ec39168ed2ed9c9e19a636f21e1e80a51055610f4ba8d72cde8feb00d8d0"},
 ]
 
 [package.dependencies]
