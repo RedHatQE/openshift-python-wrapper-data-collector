@@ -5,7 +5,15 @@ import yaml
 from ocp_resources.datavolume import DataVolume
 from ocp_resources.namespace import Namespace
 from ocp_resources.pod import Pod
-from ocp_resources.project_request import ProjectRequest
+
+try:
+    from ocp_resources.project_request import ProjectRequest
+except ImportError:
+    try:
+        from ocp_resources.project_project_openshift_io import ProjectRequest
+    except ImportError:
+        from ocp_resources.project import ProjectRequest
+
 from ocp_resources.resource import NamespacedResource, get_client
 from ocp_resources.virtual_machine import VirtualMachine
 from pytest_testconfig import config as py_config
