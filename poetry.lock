@@ -761,12 +761,12 @@ signedtoken = ["cryptography (>=3.0.0)", "pyjwt (>=2.0.0,<3)"]
 
 [[package]]
 name = "openshift-python-wrapper"
-version = "11.0.50"
+version = "11.0.52"
 description = "Wrapper around https://github.com/kubernetes-client/python"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "openshift_python_wrapper-11.0.50.tar.gz", hash = "sha256:f4d8900cabd2ab74c4029db0d16b553c0354d42ddce8f9bf143d480b7763187e"},
+    {file = "openshift_python_wrapper-11.0.52.tar.gz", hash = "sha256:f7f5e2c1feb241543a4c1cb8e95c8b2c089fb845625151daf0480ad933284917"},
 ]
 
 [package.dependencies]
