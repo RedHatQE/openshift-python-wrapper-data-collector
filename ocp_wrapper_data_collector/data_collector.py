@@ -253,7 +253,7 @@ def write_container_logs_to_files(pod, base_directory):
         try:
             write_to_file(
                 file_name=f"{pod.name}_{container}.log",
-                content=pod.log(**{"container": container}),
+                content=pod.log(container=container),
                 base_directory=base_directory,
                 extra_dir_name="containers",
             )
